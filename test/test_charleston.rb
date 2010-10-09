@@ -1,6 +1,16 @@
 require 'helper'
 
 class TestCharleston < Test::Unit::TestCase
+  context 'the Charleston module' do
+    subject { Charleston }
+    context 'create_project module method' do
+      subject { Charleston.method(:create_project) }
+      should 'take one argument' do
+        assert_equal 1, subject.arity
+      end
+    end
+  end
+
   context 'the "charleston" utility' do
     should 'call the Charleston.create_project method with the directory argument' do
       test_argument = rand(1000).to_s
