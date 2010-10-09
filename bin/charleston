@@ -10,5 +10,3 @@ else
   require File.join(File.dirname(__FILE__), %w{ .. lib charleston})
   Charleston.create_project first_arg
 end
-
-
