@@ -1,6 +1,6 @@
 = charleston
 
-Description goes here.
+static HTML generator with HAML, SASS, and CoffeeScript
 
 == Note on Patches/Pull Requests
  
