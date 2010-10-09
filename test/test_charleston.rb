@@ -17,6 +17,10 @@ class TestCharleston < Test::Unit::TestCase
         should 'create the directory' do
           assert File.directory?("directory name")
         end
+
+        before_should 'create a generator with the directory name' do
+          Charleston::Generator.expects(:new).once.with("directory name")
+        end
       end
     end
   end
