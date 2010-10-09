@@ -21,6 +21,14 @@ class TestCharleston < Test::Unit::TestCase
         before_should 'create a generator with the directory name' do
           Charleston::Generator.expects(:new).once.with("directory name")
         end
+
+        before_should 'copy the template' do
+          FileUtils.expects(:cp_r).once.with do |from, to|
+            File.expand_path(from) ==
+              File.expand_path(File.join(File.dirname(__FILE__), *%w{ .. lib charleston template})) &&
+              to == "directory_name"
+          end
+        end
       end
     end
   end
