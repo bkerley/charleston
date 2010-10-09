@@ -13,6 +13,7 @@ begin
     gem.add_development_dependency "shoulda", "~> 2.11"
     gem.add_development_dependency "yard", "~> 0.6"
     gem.add_development_dependency "mocha", "~> 0.9"
+    gem.add_development_dependency "fakefs", "~> 0.2"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
