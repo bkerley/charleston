@@ -8,6 +8,16 @@ class TestCharleston < Test::Unit::TestCase
       should 'take one argument' do
         assert_equal 1, subject.arity
       end
+
+      context 'when called with a directory name' do
+        setup do
+          subject.call("directory name")
+        end
+
+        should 'create the directory' do
+          assert File.directory?("directory name")
+        end
+      end
     end
   end
 end
