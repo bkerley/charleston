@@ -10,8 +10,9 @@ begin
     gem.email = "bkerley@brycekerley.net"
     gem.homepage = "http://github.com/bkerley/charleston"
     gem.authors = ["Bryce Kerley"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_development_dependency "yard", ">= 0"
+    gem.add_development_dependency "shoulda", "~> 2.11"
+    gem.add_development_dependency "yard", "~> 0.6"
+    gem.add_development_dependency "mocha", "~> 0.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
