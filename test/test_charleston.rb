@@ -8,7 +8,8 @@ class TestCharleston < Test::Unit::TestCase
       run_command_line_with_args test_argument
     end
 
-    should 'display help when called with the --help argument' do
+    should 'puts to stderr at least twice when called with the --help argument' do
+      $stderr.expects(:puts).at_least(2)
       run_command_line_with_args '--help'
     end
   end
