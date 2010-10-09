@@ -3,7 +3,9 @@ require 'helper'
 class TestCharleston < Test::Unit::TestCase
   context 'the "charleston" utility' do
     should 'call the Charleston.create_project method with the directory argument' do
-      run_command_line_with_args 'test argument'
+      test_argument = rand(1000).to_s
+      Charleston.expects(:create_project).once.with(test_argument)
+      run_command_line_with_args test_argument
     end
 
     should 'display help when called with the --help argument' do
