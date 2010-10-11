@@ -14,6 +14,11 @@ module Charleston
       write_rules
     end
 
+    def generates(rule_name)
+      desc "Transform #{@source_dir}/#{@source_pat} into output/#{@dest_dir}/#{@dest_pat}"
+      task "generate:#{rule_name}" => @destinations
+    end
+
     private
     def find_sources
       @sources = ::Rake::FileList[File.join(@source_dir, @source_pat)]
@@ -32,7 +37,7 @@ module Charleston
     def write_rules
       @sources.zip(@destinations) do |p|
         input, output = p
-        file output => [input, 'output'] do
+        file output => [input, 'output', File.join('output', @dest_dir)] do
           @transformation.call input, output
         end
       end
