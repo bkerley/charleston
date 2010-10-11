@@ -13,9 +13,10 @@ class TestTransform < Test::Unit::TestCase
 
       context 'called with a directory full of hamls' do
         setup do
-          FakeFS::FileSystem.clone File.join(File.dirname(__FILE__), 'fixture')
-          FakeFS::FileSystem.chdir File.join(File.dirname(__FILE__), 'fixture')
-          Charleston::Transform.new('pages', '*.haml', '', '*.html'){ }
+          @fixture_directory = File.expand_path(File.join(File.dirname(__FILE__), 'fixture'))
+          FakeFS::FileSystem.clone @fixture_directory
+          FakeFS::FileSystem.chdir @fixture_directory
+          @transform = Charleston::Transform.new(File.join(@fixture_directory, 'pages'), '*.haml', '', '*.html'){ }
         end
 
         before_should 'make file rules for index and about' do
@@ -27,6 +28,24 @@ class TestTransform < Test::Unit::TestCase
               next false unless output =~ Regexp.new("output/#{f}\\\.html$")
               next false unless input.include? 'output' #directory
               next false unless input.detect{ |v| v =~ Regexp.new("pages/#{f}\\\.haml$")}
+              true
+            end
+          end
+        end
+
+        context 'when asked to register rules' do
+          setup do
+            @transform.generates 'haml'
+          end
+
+          before_should 'make a "generate:haml" rule' do
+            @transform.expects(:task).with do |args|
+              task = args.keys.first
+              depends = args[task]
+              next false unless args.length == 1
+              next false unless task == 'generate:haml'
+              next false unless depends.detect{ |v| v =~ /output\/index\.html$/ }
+              next false unless depends.detect{ |v| v =~ /output\/about\.html$/ }
               true
             end
           end
