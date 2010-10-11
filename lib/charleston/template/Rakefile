@@ -1,0 +1,4 @@
+require 'rake'
+require 'charleston/tasks'
+
+# add custom rakefile tasks here
