@@ -1,4 +1,6 @@
-require File.join(File.dirname(__FILE__), 'charleston', 'generator')
+%w{ generator checks transform }.each do |m|
+  require File.join(File.dirname(__FILE__), 'charleston', m)
+end
 
 module Charleston
   def self.create_project(project_name)
