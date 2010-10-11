@@ -1,3 +1,4 @@
+require 'rake'
 %w{ generator checks transform }.each do |m|
   require File.join(File.dirname(__FILE__), 'charleston', m)
 end
