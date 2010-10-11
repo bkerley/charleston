@@ -5,11 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "charleston"
-    gem.summary = %Q{TODO: one-line summary of your gem}
+    gem.summary = %Q{static HTML framework}
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "bkerley@brycekerley.net"
     gem.homepage = "http://github.com/bkerley/charleston"
     gem.authors = ["Bryce Kerley"]
+    gem.executables = %w{ charleston }
+
+    gem.add_runtime_dependency "rake", "~> 0.8"
+
     gem.add_development_dependency "shoulda", "~> 2.11"
     gem.add_development_dependency "yard", "~> 0.6"
     gem.add_development_dependency "mocha", "~> 0.9"
