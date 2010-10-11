@@ -1,5 +1,5 @@
 require 'rake'
 require 'charleston/tasks'
 
-task 'default' => %w{ generate:haml generate:sass }
+task 'default' => 'generate:all'
 # add custom rakefile tasks here
