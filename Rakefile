@@ -5,8 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "charleston"
-    gem.summary = %Q{static HTML framework}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Static HTML site framework}
+    gem.description = <<-EOD.lines.map{|l|l.strip}.join(' ')
+        Charleston is a framework to build static HTML/CSS/JavaScript sites with
+        any combination of HTML, HAML, CSS, SASS, JavaScript, and CoffeeScript,
+        that's easy to put together and maintain.
+    EOD
     gem.email = "bkerley@brycekerley.net"
     gem.homepage = "http://github.com/bkerley/charleston"
     gem.authors = ["Bryce Kerley"]
