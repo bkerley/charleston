@@ -8,40 +8,43 @@ $body_font: "Avenir LT Std", Avenir, "Helvetica Neue", Helvetica, sans-serif, Ar
 $code_font: Inconsolata, Menlo, "Droid Sans Mono", Consolas, "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "Lucida Console", mono, Courier, "Courier New"
 
 body
-    background-color: $background_color
-    color: $foreground_color
-    font-family: $body_font
-    font-size: 1.2em
+  background-color: $background_color
+  color: $foreground_color
+  font-family: $body_font
+  font-size: 1.2em
 h1, h2, h3, h4, h5, h6
-    color: $accent_color
-    font-weight: 900
+  color: $accent_color
+  font-weight: 900
 code
-    font-family: $code_font
-    background-color: $dark_accent_color
-    padding: 0 4px
+  font-family: $code_font
+  background-color: $dark_accent_color
+  padding: 0 4px
 table
-    thead
-        tr
-            background-color: $accent_color
-            color: $background_color
-            th
-                padding-top: 4px
-                font-weight: 100
+  thead
+    tr
+      background-color: $accent_color
+      color: $background_color
+      th
+        padding-top: 4px
+        font-weight: 100
+  tbody
     td
-        padding: 2px 4px
-        &.in, &.out
-            font-family: $code_font
-        
+      padding: 2px 4px
+      &.in, &.out
+        font-family: $code_font
+      &.gigantic
+        font-size: 4em
+
 a:link, a:visited
-    color: $accent_color
+  color: $accent_color
 a:hover
-    text-decoration: none
+  text-decoration: none
 
 div.gutter
-    width: 800px
-    margin: 0px auto
+  width: 800px
+  margin: 0px auto
+  padding: 10px
+  div.welcome
+    background-color: $welcome_color
     padding: 10px
-    div.welcome
-        background-color: $welcome_color
-        padding: 10px
-        margin: -10px
+    margin: -10px
