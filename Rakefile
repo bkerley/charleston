@@ -13,6 +13,9 @@ begin
     gem.executables = %w{ charleston }
 
     gem.add_runtime_dependency "rake", "~> 0.8"
+    gem.add_runtime_dependency 'haml', '~> 3.0'
+    # uncomment this for sass 3.1 when it comes out
+    # gem.add_runtime_dependency 'sass', '~> 3.1'
 
     gem.add_development_dependency "shoulda", "~> 2.11"
     gem.add_development_dependency "yard", "~> 0.6"
