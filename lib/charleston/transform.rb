@@ -26,19 +26,15 @@ module Charleston
     end
 
     def target_destinations
-      src_extension = find_extension_in_pattern(@source_pat)
-      dest_extension = find_extension_in_pattern(@dest_pat)
       @destinations = @sources.map do |s|
-        File.expand_path(
-                             s.sub(@source_dir, File.join('output', @dest_dir)).
-                             sub(src_extension, dest_extension))
+        File.expand_path(turn_source_into_destination s)
       end
     end
 
     def write_rules
       @sources.zip(@destinations) do |p|
         input, output = p
-        file output => [input, 'output', File.join('output', @dest_dir)] do
+        file output => [input, 'output', output_directory] do
           @transformation.call input, output
         end
       end
@@ -46,6 +42,23 @@ module Charleston
 
     def find_extension_in_pattern(pattern)
       pattern.sub(/\*\./, '')
+    end
+
+    def source_extension
+      find_extension_in_pattern @source_pat
+    end
+
+    def destination_extension
+      find_extension_in_pattern @dest_pat
+    end
+
+    def output_directory
+      File.join('output', @dest_dir)
+    end
+
+    def turn_source_into_destination(source_file)
+      source_file.sub(@source_dir, output_directory).
+        sub(source_extension, destination_extension)
     end
   end
 end
