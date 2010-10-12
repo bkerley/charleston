@@ -1,0 +1,77 @@
+!!! 5
+%head
+  %title Welcome to Charleston
+  %link(rel='stylesheet' type='text/css' href='stylesheets/screen.css')
+%body
+  .gutter
+    .welcome
+      %h1 Welcome to Charleston
+      :markdown
+        Charleston is a framework to build static HTML/CSS/JavaScript sites with
+        any combination of HTML, HAML, CSS, SASS, JavaScript, and CoffeeScript,
+        that's easy to put together and maintain.
+    %h2 Let's get started!
+    :markdown
+      1. I'm assuming you've run "charleston my_project" and are now looking
+         at a sample page.
+      2. Edit "pages/index.haml", and create new HTML or HAML files in the "pages"
+         directory to make new pages.
+      2. Edit "stylesheets/screen.sass", and create new CSS or SASS files in
+         the "stylesheets" directory to make new stylesheets.
+      3. Edit and create JavaScript or CoffeeScript files in the "javascripts"
+         directory to make new script files.
+      4. Add images to the "images" directory if you want.
+      3. When you want to build the site, run "rake" and it will be created
+         in the "output" directory.
+    %h2 Where to Put Files
+    %table
+      %thead
+        %tr
+          %th Class
+          %th Format
+          %th Inputs
+          %th Outputs
+      %tbody
+        %tr
+          %td Page
+          %td HTML
+          %td pages/*.html
+          %td output/*.html
+        %tr
+          %td Page
+          %td HAML
+          %td pages/*.haml
+          %td output/*.html
+        %tr
+          %td Stylesheet
+          %td CSS
+          %td stylesheets/*.css
+          %td output/stylesheets/*.css
+        %tr
+          %td Stylesheet
+          %td SASS
+          %td stylesheets/*.sass
+          %td output/stylesheets/*.css
+        %tr
+          %td Script
+          %td JavaScript
+          %td javascripts/*.js
+          %td output/javascripts/*.js
+        %tr
+          %td Script
+          %td CoffeeScript
+          %td javascripts/*.coffee
+          %td output/javascripts/*.js
+        %tr
+          %td Image
+          %td Any format
+          %td images/*
+          %td output/images/*
+    %h2 What Not To Do
+    :markdown
+      * Don't make any direct edits to the "output" directory. These files
+      get clobbered when you update the source files.
+    %h2 More information
+    :markdown
+      Source code is available and forkable on the
+      [Charleston Github repository](http://github.com/bkerley/charleston)

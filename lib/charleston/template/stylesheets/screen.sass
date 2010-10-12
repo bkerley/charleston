@@ -1,0 +1,35 @@
+$accent_color: #b1dd8f
+$welcome_color: #222
+$background_color: #111
+$foreground_color: white
+
+$body_font: "Avenir LT Std", "Helvetica Neue", Helvetica, sans-serif, Arial
+
+body
+    background-color: $background_color
+    color: $foreground_color
+    font-family: $body_font
+    font-size: 1.2em
+h1, h2, h3, h4, h5, h6
+    color: $accent_color
+    font-weight: 900
+table
+    thead
+        tr
+            background-color: $accent_color
+            color: $background_color
+            th
+                font-weight: 100
+a:link, a:visited
+    color: $accent_color
+a:hover
+    text-decoration: none
+
+div.gutter
+    width: 800px
+    margin: 0px auto
+    padding: 10px
+    div.welcome
+        background-color: $welcome_color
+        padding: 10px
+        margin: -10px
