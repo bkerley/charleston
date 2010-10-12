@@ -17,6 +17,7 @@ module Charleston
     def generates(rule_name)
       desc "Transform #{@source_dir}/#{@source_pat} into output/#{@dest_dir}/#{@dest_pat}"
       task "generate:#{rule_name}" => @destinations
+      task 'generate:all' => "generate:#{rule_name}"
     end
 
     private

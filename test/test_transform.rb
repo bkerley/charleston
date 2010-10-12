@@ -38,7 +38,7 @@ class TestTransform < Test::Unit::TestCase
             @transform.generates 'haml'
           end
 
-          before_should 'make a "generate:haml" rule' do
+          before_should 'make a "generate:haml" rule and add it to the generate:all rule' do
             @transform.expects(:task).with do |args|
               task = args.keys.first
               depends = args[task]
@@ -48,6 +48,7 @@ class TestTransform < Test::Unit::TestCase
               next false unless depends.detect{ |v| v =~ /output\/about\.html$/ }
               true
             end
+            @transform.expects(:task).with('generate:all'=>'generate:haml')
           end
         end
       end
