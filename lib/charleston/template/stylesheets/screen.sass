@@ -2,8 +2,10 @@ $accent_color: #b1dd8f
 $welcome_color: #222
 $background_color: #111
 $foreground_color: white
+$dark_accent_color: darken($accent_color, 50%)
 
 $body_font: "Avenir LT Std", Avenir, "Helvetica Neue", Helvetica, sans-serif, Arial
+$code_font: Inconsolata, Menlo, "Droid Sans Mono", Consolas, "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "Lucida Console", mono, Courier, "Courier New"
 
 body
     background-color: $background_color
@@ -13,13 +15,23 @@ body
 h1, h2, h3, h4, h5, h6
     color: $accent_color
     font-weight: 900
+code
+    font-family: $code_font
+    background-color: $dark_accent_color
+    padding: 0 4px
 table
     thead
         tr
             background-color: $accent_color
             color: $background_color
             th
+                padding-top: 4px
                 font-weight: 100
+    td
+        padding: 2px 4px
+        &.in, &.out
+            font-family: $code_font
+        
 a:link, a:visited
     color: $accent_color
 a:hover

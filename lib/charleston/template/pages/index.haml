@@ -12,17 +12,17 @@
         that's easy to put together and maintain.
     %h2 Let's get started!
     :markdown
-      1. I'm assuming you've run "charleston my_project" and are now looking
+      1. I'm assuming you've run `charleston my_project` and are now looking
          at a sample page.
-      2. Edit "pages/index.haml", and create new HTML or HAML files in the "pages"
+      2. Edit `pages/index.haml`, and create new HTML or HAML files in the `pages`
          directory to make new pages.
-      2. Edit "stylesheets/screen.sass", and create new CSS or SASS files in
-         the "stylesheets" directory to make new stylesheets.
-      3. Edit and create JavaScript or CoffeeScript files in the "javascripts"
+      2. Edit `stylesheets/screen.sass`, and create new CSS or SASS files in
+         the `stylesheets` directory to make new stylesheets.
+      3. Edit and create JavaScript or CoffeeScript files in the `javascripts`
          directory to make new script files.
-      4. Add images to the "images" directory if you want.
-      3. When you want to build the site, run "rake" and it will be created
-         in the "output" directory.
+      4. Add images to the `images` directory if you want.
+      3. When you want to build the site, run `rake` and it will be created
+         in the `output` directory.
     %h2 Where to Put Files
     %table
       %thead
@@ -35,38 +35,38 @@
         %tr
           %td Page
           %td HTML
-          %td pages/*.html
-          %td output/*.html
+          %td.in pages/*.html
+          %td.out output/*.html
         %tr
           %td Page
           %td HAML
-          %td pages/*.haml
-          %td output/*.html
+          %td.in pages/*.haml
+          %td.out output/*.html
         %tr
           %td Stylesheet
           %td CSS
-          %td stylesheets/*.css
-          %td output/stylesheets/*.css
+          %td.in stylesheets/*.css
+          %td.out output/stylesheets/*.css
         %tr
           %td Stylesheet
           %td SASS
-          %td stylesheets/*.sass
-          %td output/stylesheets/*.css
+          %td.in stylesheets/*.sass
+          %td.out output/stylesheets/*.css
         %tr
           %td Script
           %td JavaScript
-          %td javascripts/*.js
-          %td output/javascripts/*.js
+          %td.in javascripts/*.js
+          %td.out output/javascripts/*.js
         %tr
           %td Script
           %td CoffeeScript
-          %td javascripts/*.coffee
-          %td output/javascripts/*.js
+          %td.in javascripts/*.coffee
+          %td.out output/javascripts/*.js
         %tr
           %td Image
           %td Any format
-          %td images/*
-          %td output/images/*
+          %td.in images/*
+          %td.out output/images/*
     %h2 What Not To Do
     :markdown
       * Don't make any direct edits to the "output" directory. These files
@@ -74,4 +74,9 @@
     %h2 More information
     :markdown
       Source code is available and forkable on the
-      [Charleston Github repository](http://github.com/bkerley/charleston)
+      [Charleston Github repository](http://github.com/bkerley/charleston).
+      Thanks in advance for your contributions and well-tested patches.
+      
+      Charleston is Copyright &copy; 2010 by Bryce Kerley. Please see the
+      license included with this software, or in the [Charleston Github
+      repository](http://github.com/bkerley/charleston/blob/master/LICENSE).
