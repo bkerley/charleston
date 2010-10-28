@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+  <title>Welcome to Charleston</title>
+  <link href='stylesheets/screen.css' rel='stylesheet' type='text/css' />
+</head>
+<body>
+  <div class='gutter'>
+    <div class='welcome'>
+      <h1>Welcome to Charleston</h1>
+      <p>Charleston is a framework to build static HTML/CSS/JavaScript sites with
+      any combination of HTML, HAML, CSS, SASS, JavaScript, and CoffeeScript,
+      that's easy to put together and maintain.</p>
+    </div>
+    <h2>Let's get started!</h2>
+    <ol>
+    <li>I'm assuming you've run <code>charleston my_project</code> and are now looking
+    at a sample page.</li>
+    <li>Edit <code>pages/index.haml</code>, and create new HTML or HAML files in the <code>pages</code>
+    directory to make new pages.</li>
+    <li>Edit <code>stylesheets/screen.sass</code>, and create new CSS or SASS files in
+    the <code>stylesheets</code> directory to make new stylesheets.</li>
+    <li>Edit and create JavaScript or CoffeeScript files in the <code>javascripts</code>
+    directory to make new script files.</li>
+    <li>Add images to the <code>images</code> directory if you want.</li>
+    <li>When you want to build the site, run <code>rake</code> and it will be created
+    in the <code>output</code> directory.</li>
+    </ol>
+    <h2>Where to Put Files</h2>
+    <table id='where_to_put'>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Format</th>
+          <th>Inputs</th>
+          <th>Outputs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Page</td>
+          <td>HTML</td>
+          <td class='in'>pages/*.html</td>
+          <td class='out'>output/*.html</td>
+        </tr>
+        <tr>
+          <td>Page</td>
+          <td>HAML</td>
+          <td class='in'>pages/*.haml</td>
+          <td class='out'>output/*.html</td>
+        </tr>
+        <tr>
+          <td>Stylesheet</td>
+          <td>CSS</td>
+          <td class='in'>stylesheets/*.css</td>
+          <td class='out'>output/stylesheets/*.css</td>
+        </tr>
+        <tr>
+          <td>Stylesheet</td>
+          <td>SASS</td>
+          <td class='in'>stylesheets/*.sass</td>
+          <td class='out'>output/stylesheets/*.css</td>
+        </tr>
+        <tr>
+          <td>Script</td>
+          <td>JavaScript</td>
+          <td class='in'>javascripts/*.js</td>
+          <td class='out'>output/javascripts/*.js</td>
+        </tr>
+        <tr>
+          <td>Script</td>
+          <td>CoffeeScript</td>
+          <td class='in'>javascripts/*.coffee</td>
+          <td class='out'>output/javascripts/*.js</td>
+        </tr>
+        <tr>
+          <td>Image</td>
+          <td>Any format</td>
+          <td class='in'>images/*</td>
+          <td class='out'>output/images/*</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>What Not To Do</h2>
+    <ul>
+    <li>Don't make any direct edits to the "output" directory. These files
+    get clobbered when you update the source files.</li>
+    </ul>
+    <h2>More information</h2>
+    <p>Source code is available and forkable on the
+    <a href="http://github.com/bkerley/charleston">Charleston Github repository</a>.
+    Thanks in advance for your contributions and well-tested patches.</p>
+    
+    <p>Charleston is Copyright &copy; 2010 by Bryce Kerley. Please see the
+    license included with this software, or in the <a href="http://github.com/bkerley/charleston/blob/master/LICENSE">Charleston Github
+    repository</a>.</p>
+  </div>
+  <script src='http://prototypejs.org/assets/2010/5/13/prototype.js' type='text/javascript'></script>
+  <script src='javascripts/example.js' type='text/javascript'></script>
+</body>

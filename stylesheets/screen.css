@@ -1,0 +1,42 @@
+body {
+  background-color: #111111;
+  color: white;
+  font-family: "Avenir LT Std", Avenir, "Helvetica Neue", Helvetica, sans-serif, Arial;
+  font-size: 1.2em; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #b1dd8f;
+  font-weight: 900; }
+
+code {
+  font-family: Inconsolata, Menlo, "Droid Sans Mono", Consolas, "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "Lucida Console", mono, Courier, "Courier New";
+  background-color: #335419;
+  padding: 0 4px; }
+
+table thead tr {
+  background-color: #b1dd8f;
+  color: #111111; }
+  table thead tr th {
+    padding-top: 4px;
+    font-weight: 100; }
+table tbody td {
+  padding: 2px 4px; }
+  table tbody td.in, table tbody td.out {
+    font-family: Inconsolata, Menlo, "Droid Sans Mono", Consolas, "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "Lucida Console", mono, Courier, "Courier New"; }
+  table tbody td.gigantic {
+    font-size: 4em; }
+
+a:link, a:visited {
+  color: #b1dd8f; }
+
+a:hover {
+  text-decoration: none; }
+
+div.gutter {
+  width: 800px;
+  margin: 0px auto;
+  padding: 10px; }
+  div.gutter div.welcome {
+    background-color: #222222;
+    padding: 10px;
+    margin: -10px; }
