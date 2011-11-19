@@ -2,7 +2,7 @@
 
 first_arg = ARGV.first
 
-if first_arg == "--help"
+if first_arg == "--help" or ARGV.empty?
   $stderr.puts "Usage: charleston project_name"
   $stderr.puts
   $stderr.puts "Creates a project called project_name in the project_name directory."
