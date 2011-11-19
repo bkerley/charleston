@@ -6,6 +6,7 @@ if first_arg == "--help" or ARGV.empty? or ARGV.size > 1
   $stderr.puts "Usage: charleston project_name"
   $stderr.puts
   $stderr.puts "Creates a project called project_name in the project_name directory."
+  exit 1
 else
   require File.join(File.dirname(__FILE__), %w{ .. lib charleston})
   Charleston.create_project first_arg
