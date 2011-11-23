@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), '..', 'charleston')
 
-%w{ directories html css js image }.each do |f|
+%w{ html css js image }.each do |f|
   load File.join(File.dirname(__FILE__), 'tasks', "#{f}.rake")
 end
 

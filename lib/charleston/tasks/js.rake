@@ -1,9 +1,14 @@
-@js_transform = Charleston::Transform.new 'javascripts', '*.js', 'javascripts', '*.js' do |input, output|
+Charleston::Transform.new 'javascripts', '*.js', 'javascripts', '*.js' do |input, output|
   FileUtils.cp input, output
 end
-@js_transform.generates 'javascript'
 
-@cs_transform = Charleston::Transform.new 'javascripts', '*.coffee', 'javascripts', '*.js' do |input, output|
-  sh "coffee -cp #{input} > #{output}"
+Charleston::Transform.new 'javascripts', '*.coffee', 'javascripts', '*.js' do |input, output|
+  begin
+    sh "coffee -cp #{input} > #{output}"
+  rescue RuntimeError => e
+    # ">" creates an empty file even if coffee fails.
+    FileUtils.rm output
+
+    raise "!!!!\n!! Please install CoffeeScript\n!!!!"
+  end
 end
-@cs_transform.generates 'coffeescript'
